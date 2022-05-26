@@ -10,4 +10,9 @@ export default class PostsService {
     })
     return response
   }
+
+  static  async getByID(id) {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
+    return response
+  }
 }

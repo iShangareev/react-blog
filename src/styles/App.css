@@ -22,6 +22,16 @@
   padding: 15px;
   border: 3px solid teal;
   margin-top: 15px;
+  border-radius: 4px;
+}
+
+.post__btns {
+  display: flex;
+  gap: 5px;
+}
+
+button {
+  border-radius: 4px;
 }
 
 .post-enter {
@@ -42,11 +52,13 @@
 .page__wrapper {
   margin-top: 30px;
   display: flex;
+  gap: 4px;
 }
 
 .page {
   padding: 10px;
   border: 1px solid teal;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -64,6 +76,8 @@
   background-color: lightgray;
 }
 
-.navbar-links {
+.navbar__links {
+  display: flex;
+  gap: 10px;
   margin-left: auto;
 }
