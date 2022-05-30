@@ -1,9 +1,9 @@
 import React from 'react';
 import MyButton from './UI/button/MyButton';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const PostItem = (props) => {
-  const router = useNavigate()
+  const router = useHistory()
 
   return (
     <div className="post">
