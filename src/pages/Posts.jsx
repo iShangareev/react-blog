@@ -10,7 +10,7 @@ import Loader from '../components/UI/Loader/Loader';
 import Pagination from '../components/pagination/Pagination';
 import { useFetching } from '../hooks/useFetching';
 import {usePosts} from '../hooks/usePosts'
-import { getPageCount, getPagesArray } from '../utils/pages';
+import { getPageCount } from '../utils/pages';
 import { useObserver } from '../hooks/useObserver';
 import MySelect from '../components/UI/select/MySelect';
 
@@ -22,10 +22,7 @@ function Posts() {
   const [limit, setLimit] = useState(10)
   const [page, setPage] = useState(1)
   const lastElement = useRef()
-
-
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
-  let pagesArray = getPagesArray(totalPages)
 
   const [fetchPosts, isPostLoading, postError] = useFetching( async () => {
     const response = await PostsService.getAll(limit, page)
@@ -37,7 +34,6 @@ function Posts() {
   useObserver(lastElement, page < totalPages, isPostLoading, () => {
     setPage(page + 1)
   })
-
 
   useEffect(() => {
     fetchPosts(limit, page)
